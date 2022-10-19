@@ -10,7 +10,6 @@ import se331.rest.entity.Event;
 import se331.rest.entity.Organizer;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Service
 public class EventServiceImpl implements EventService {
@@ -32,7 +31,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Event getEvent(Long id) {
-        return eventDao.getEvent(id);
+        return eventDao.getEvents(id);
     }
 
     @Override
@@ -47,7 +46,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Page<Event> getEvents(String title, Pageable pageable) {
-        return eventDao.getEvent(title, pageable);
+        return eventDao.getEvents(title,pageable);
     }
 }
 

@@ -28,7 +28,7 @@ public class EventDaoDbImpl implements EventDao {
     }
 
     @Override
-    public Event getEvent(Long id) {
+    public Event getEvents(Long id) {
         return eventRepository.findById(id).orElse(null);
     }
 
@@ -38,9 +38,7 @@ public class EventDaoDbImpl implements EventDao {
     }
 
     @Override
-    public Page<Event> getEvent(String title, Pageable page) {
-        return eventRepository.findByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrOrganizer_NameIgnoreCaseContaining(title,title,title,page);
-
+    public Page<Event> getEvents(String name, Pageable page) {
+        return eventRepository.findByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrOrganizer_NameIgnoreCaseContaining(name,name,name,page);
     }
-
 }
