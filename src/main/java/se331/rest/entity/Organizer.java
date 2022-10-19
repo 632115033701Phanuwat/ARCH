@@ -1,8 +1,11 @@
 package se331.rest.entity;
+
 import lombok.*;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
 @Data
 @Builder
 @Entity
@@ -17,6 +20,5 @@ public class Organizer {
     @OneToMany(mappedBy = "organizer")
     @Builder.Default
     List<Event> ownEvents = new ArrayList<>();
-    @ElementCollection
-    List<String> imageUrls;
 }
+
